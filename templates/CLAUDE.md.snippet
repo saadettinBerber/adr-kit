@@ -1,0 +1,43 @@
+<!--
+  Bu blok adr-kit'in CLAUDE.md entegrasyonudur.
+  Projenin CLAUDE.md (veya CLAUDE.local.md) dosyasına olduğu gibi yapıştır.
+  AI asistanı (Claude Code) ADR'ları okuma/yazma disiplinine bu blok zorlar.
+
+  Otomatik kurulum için: /adr-kit:adr-install-claude-md
+  (Bu HTML yorum bloğu yapıştırırken/ekledikten sonra silinir.)
+-->
+
+## Architecture Decisions — `architecture-decision` skill
+
+**ZORUNLU.** Aşağıdakilerden **herhangi birini** içeren her soru,
+tartışma veya değişiklikte:
+
+- Mimari, modül sınırları veya bağımlılık yönü
+- Port'lar, adapter'lar veya katmanlama (domain / infra / container)
+- Loglama stratejisi veya log port yapısı
+- Persistence seçimleri (DB, cache, queue)
+- API protokolleri (REST / SSE / gRPC / GraphQL)
+- Authentication / authorization
+- Deployment topolojisi veya paketleme
+- Cross-module entegrasyon
+- Birden fazla modülü etkileyen herhangi bir karar
+
+→ Cevap vermeden veya kod yazmadan **ÖNCE** `architecture-decision`
+skill'ini çağırmak **ZORUNLU** — plugin olarak kurulduysa
+`adr-kit:architecture-decision`, standalone (proje-içi `.claude/skills/`)
+kuruluysa `architecture-decision` adıyla.
+
+**YAPMA:** Mimari soruları hafızadan, bu CLAUDE.md özetinden,
+dosya isimlerinden veya legacy doküman arşivlerinden cevaplama.
+`docs/decisions/` altındaki ADR'lar **tek doğruluk kaynağıdır** ve
+skill, okuma + alıntılama disiplinini zorlar.
+
+**Yasak kestirmeler:**
+
+- "Cevabı zaten biliyorum" → yine de skill'i kullan.
+- "CLAUDE.md'de link var" → kasten yok; skill'i kullan.
+- "İsim zaten açıklayıcı" — isimler niyeti yansıtmaz; sadece ADR
+  yansıtır. Skill'i kullan.
+
+Bir değişikliğin mimari olup olmadığından emin değilsen skill'i
+çağır ve karar vermesine izin ver.

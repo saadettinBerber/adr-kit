@@ -1,0 +1,17 @@
+{
+  "name": "adr-kit",
+  "description": "ADR (Architecture Decision Record) discipline system for Claude Code teams. Includes the architecture-decision skill, ADR templates, slash commands for setup, and a CLAUDE.md enforcement snippet that prevents AI by-pass.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Saadettin Berber"
+  },
+  "license": "MIT",
+  "keywords": [
+    "adr",
+    "architecture",
+    "documentation",
+    "decision-records",
+    "discipline",
+    "skill"
+  ]
+}

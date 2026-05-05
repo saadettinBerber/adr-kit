@@ -1,0 +1,16 @@
+# OS artefaktları
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editör
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.iml
+
+# Geçici
+*.bak
+*.tmp
