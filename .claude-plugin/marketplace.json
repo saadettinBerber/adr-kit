@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "adr-kit",
-      "source": ".",
+      "source": "./",
       "description": "ADR (Architecture Decision Record) discipline system for Claude Code teams.",
       "version": "1.0.0",
       "author": {
