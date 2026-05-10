@@ -14,17 +14,46 @@
 
 ### Adımlar
 
-#### 1. Marketplace'i ekle
+Aşağıda **üç alternatif** var. Sadece **birini** uygula.
+
+#### 1a. Terminal komutu ile (REPL açmadan) — önerilen
+
+Sistem terminalinde:
+
+```bash
+claude plugin marketplace add saadettinBerber/adr-kit
+claude plugin install adr-kit@adr-kit
+```
+
+#### 1b. Claude Code REPL içinde slash komutu
+
+Önce `claude` ile REPL'i aç, sonra:
 
 ```shell
 /plugin marketplace add https://github.com/saadettinBerber/adr-kit
-```
-
-#### 2. Plugin'i kur
-
-```shell
 /plugin install adr-kit@adr-kit
 ```
+
+#### 1c. `settings.json` ile deklaratif (takım / CI)
+
+`~/.claude/settings.json` (kullanıcı geneli) veya proje kökünde
+`.claude/settings.json` (proje-spesifik) dosyasına:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "adr-kit": {
+      "source": { "source": "github", "repo": "saadettinBerber/adr-kit" }
+    }
+  },
+  "enabledPlugins": {
+    "adr-kit@adr-kit": true
+  }
+}
+```
+
+Claude Code bir sonraki başlatmada otomatik çekip aktif eder.
+Repoya commit'lersen, klonlayan herkes için sıfır manuel adım demek.
 
 Kurulum sonrası `/help` çıktısında şu skill ve command'ler görünmeli:
 - `adr-kit:architecture-decision` (skill)

@@ -24,34 +24,64 @@ gerekir**. Bu kit ADR şablonu + Claude Code skill'i + slash command'lar
 - 📖 **Felsefe + SSS** — neden bu kadar disiplin gerekli, ne zaman
   ADR yazmalı / yazmamalı.
 
-## Kurulum — iki yol
+## Kurulum
 
-### Yol 1: Plugin olarak (önerilen)
+Plugin'i kurmanın üç yolu var. Sadece **birini** seç.
 
-```shell
-# 1. Marketplace'i ekle
-/plugin marketplace add https://github.com/saadettinBerber/adr-kit
+### Yol A: Terminal komutu (önerilen)
 
-# 2. Plugin'i kur
-/plugin install adr-kit@adr-kit
+Sistem terminalinde, Claude Code REPL'i açmana gerek yok:
 
-# 3. Projeye iskeleti kur
-/adr-kit:adr-init
-
-# 4. CLAUDE.md'ne enforcement bloğunu ekle
-/adr-kit:adr-install-claude-md
-
-# 5. (Opsiyonel) İlk ADR'ını yaz
-/adr-kit:adr-new architecture-style
+```bash
+claude plugin marketplace add saadettinBerber/adr-kit
+claude plugin install adr-kit@adr-kit
 ```
 
-> 💡 5. adım **opsiyonel.** İlk ADR'ını şimdi yazmak zorunda değilsin —
+### Yol B: Claude Code içinde slash komutu
+
+Önce `claude` ile REPL'i aç, sonra:
+
+```shell
+/plugin marketplace add https://github.com/saadettinBerber/adr-kit
+/plugin install adr-kit@adr-kit
+```
+
+### Yol C: `.claude/settings.json` ile (takım / CI)
+
+Repoyu klonlayan herkes için sıfır manuel adım — dosyayı commit'le:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "adr-kit": {
+      "source": { "source": "github", "repo": "saadettinBerber/adr-kit" }
+    }
+  },
+  "enabledPlugins": {
+    "adr-kit@adr-kit": true
+  }
+}
+```
+
+`~/.claude/settings.json` (kullanıcı geneli) veya proje kökünde
+`.claude/settings.json` (proje-spesifik) olabilir.
+
+### Kurulum sonrası — projede ADR iskeletini kur
+
+Hangi yolla kurarsan kur, plugin yüklendikten sonra Claude Code içinde:
+
+```shell
+/adr-kit:adr-init                  # docs/ iskeletini oluşturur
+/adr-kit:adr-install-claude-md     # CLAUDE.md'ne enforcement ekler
+/adr-kit:adr-new architecture-style  # (opsiyonel) ilk ADR'ı
+```
+
+> 💡 Son adım **opsiyonel.** İlk ADR'ını şimdi yazmak zorunda değilsin —
 > bkz. [İlk ADR'ını ne zaman yazmalısın?](#i̇lk-adrını-ne-zaman-yazmalısın)
 
-### Yol 2: Manuel (klonla, kopyala)
+### Plugin sistemini kullanmıyorsan
 
-Plugin sistemini kullanmıyorsan: [INSTALL.md](INSTALL.md)'deki adım
-adım talimatları takip et.
+Manuel kurulum (klonla, kopyala) için: [INSTALL.md](INSTALL.md).
 
 ## İlk ADR'ını ne zaman yazmalısın?
 
