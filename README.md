@@ -30,7 +30,7 @@ gerekir**. Bu kit ADR şablonu + Claude Code skill'i + slash command'lar
 
 ```shell
 # 1. Marketplace'i ekle
-/plugin marketplace add https://github.com/<your-username>/adr-kit
+/plugin marketplace add https://github.com/saadettinBerber/adr-kit
 
 # 2. Plugin'i kur
 /plugin install adr-kit@adr-kit

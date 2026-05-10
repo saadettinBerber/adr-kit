@@ -17,7 +17,7 @@
 #### 1. Marketplace'i ekle
 
 ```shell
-/plugin marketplace add https://github.com/<your-username>/adr-kit
+/plugin marketplace add https://github.com/saadettinBerber/adr-kit
 ```
 
 #### 2. Plugin'i kur
@@ -93,7 +93,7 @@ Plugin sistemini kullanamıyorsan veya hibrit istiyorsan:
 ### 1. Repo'yu klonla
 
 ```bash
-git clone https://github.com/<your-username>/adr-kit.git /tmp/adr-kit
+git clone https://github.com/saadettinBerber/adr-kit.git /tmp/adr-kit
 ```
 
 ### 2. Skill'i kopyala
